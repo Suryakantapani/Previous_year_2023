@@ -115,9 +115,9 @@ public class previous_year {
             void giveBonus(double amount);
         }
         public abstract class Staff {
-            private String firstName;
-            private String lastName;
-            private double salary;
+            String firstName;
+            String lastName;
+            double salary;
 
             public Staff(String firstName, String lastName, double salary) {
                 this.firstName = firstName;
@@ -129,7 +129,7 @@ public class previous_year {
 
         //b
         public class Supervisor extends Staff implements StaffInterface {
-            private double bonus;
+            double bonus;
 
             public Supervisor(String firstName, String lastName, double salary, double bonus) {
                 super(firstName, lastName, salary);
@@ -140,7 +140,7 @@ public class previous_year {
             }
 
             public void displayStaff() {
-                System.out.println("Supervisor: " + getFirstName() + " " + getLastName() + ", Salary: " + getSalary() + ", Bonus: " + bonus);
+                System.out.println("Supervisor: " + firstName + " " + lastName + ", Salary: " + salary + ", Bonus: " + bonus);
             }
 
             public void giveBonus(double amount) {
@@ -155,10 +155,6 @@ public class previous_year {
                 try {
                     Supervisor supervisor1 = new Supervisor("xyz", "abc", 50000, 5000);
                     Supervisor supervisor2 = new Supervisor("pwr", "xyz", 60000, 6000);
-                    StaffInterface[] staffArray = new StaffInterface[]{supervisor1, supervisor2};
-                    for (StaffInterface staff : staffArray) {
-                        staff.displayStaff();
-                    }
                 }
                 catch (IllegalArgumentException e) {
                     System.out.println("Error: " + e.getMessage());
