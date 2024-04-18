@@ -153,8 +153,12 @@ public class previous_year {
         public class Main {
             public static void main(String[] args) {
                 try {
-                    Supervisor supervisor1 = new Supervisor("xyz", "abc", 50000, 5000);
-                    Supervisor supervisor2 = new Supervisor("pwr", "xyz", 60000, 6000);
+                    StaffInterface[] staffArray = new StaffInterface[2];
+                    staffArray[0]= new Supervisor("xyz", "abc", 50000, 5000);
+                    staffArray[1]= new Supervisor("pwr", "xyz", 60000, 6000);
+                    for (StaffInterface staff : staffArray) {
+                        staff.displayStaff();
+                    }
                 }
                 catch (IllegalArgumentException e) {
                     System.out.println("Error: " + e.getMessage());
